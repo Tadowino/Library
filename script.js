@@ -22,10 +22,16 @@ function render(){
     <div class="card-body">
      <p>${book.pages}</p>
      <p>${book.read?"Read":"Not Read Yet"}</p>
+     <button class="remove-btn" onclick="remove(${i})">Remove</button>
     </div>
     `
     library.appendChild(bookEl);
   }
+}
+
+function remove(index){
+  myLibrary.splice(index,1);
+  render();
 }
 
 function addBookToLibrary() {
